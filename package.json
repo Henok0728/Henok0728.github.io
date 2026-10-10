@@ -1,0 +1,34 @@
+{
+  "name": "henokportfolio",
+  "version": "1.0.0",
+  "description": "Portfolio website of Henok Gizaw",
+  "homepage": "https://github.com/Henok0728/henokgportfolio#readme",
+  "bugs": {
+    "url": "https://github.com/Henok0728/henokgportfolio/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Henok0728/henokgportfolio.git"
+  },
+  "license": "ISC",
+  "author": "Henok Gizaw",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@vercel/analytics": "^2.0.1",
+    "@vercel/speed-insights": "^2.0.0",
+    "devicons": "^2.0.1",
+    "katex": "^0.18.3",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.0.0"
+  }
+}

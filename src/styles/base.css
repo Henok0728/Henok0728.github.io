@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#favi {
+    border-radius: 50px;
+}
+
+html {
+    scroll-behavior: smooth;
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+    overflow-x: hidden;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Modern Physics Equations Background Canvas & LaTeX Layer (Dark Mode Only) */
+#physics-bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -3;
+    pointer-events: none !important;
+    user-select: none;
+    transition: opacity 0.5s ease;
+}
+
+#physics-equations-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+    pointer-events: none !important;
+    user-select: none;
+    overflow: hidden;
+}
+
+/* Transistor & Electronic Circuit Schematics Background Canvas & Equations (Light Mode Only) */
+#light-bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -3;
+    pointer-events: none !important;
+    user-select: none;
+    transition: opacity 0.5s ease;
+    opacity: 0.55;
+    display: none;
+}
+
+#light-equations-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+    pointer-events: none !important;
+    user-select: none;
+    overflow: hidden;
+    opacity: 0.72;
+    display: none;
+}
+
+[data-theme="light"] #light-bg-canvas,
+[data-theme="light"] #light-equations-layer {
+    display: block !important;
+}
+
+/* Strictly hide physics background in light mode */
+[data-theme="light"] #physics-bg-canvas,
+[data-theme="light"] #physics-equations-layer {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+.physics-equation-node {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    will-change: transform;
+    transform-origin: center center;
+    color: rgba(226, 232, 240, 0.13);
+    pointer-events: none !important;
+    user-select: none !important;
+}
+
+.physics-equation-node .katex-display {
+    margin: 0;
+    pointer-events: none !important;
+}
+
+.physics-equation-node .katex {
+    font-size: 1.15rem;
+    text-shadow: none;
+    pointer-events: none !important;
+}
+
+.light-equation-node {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    will-change: transform;
+    transform-origin: center center;
+    pointer-events: none !important;
+    user-select: none !important;
+}
+
+.light-equation-node .circuit-title-badge {
+    font-family: var(--font-family);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(15, 23, 42, 0.48);
+    margin-bottom: 2px;
+    white-space: nowrap;
+}
+
+.light-equation-node .katex-display {
+    margin: 0;
+    pointer-events: none !important;
+}
+
+.light-equation-node .katex {
+    font-size: 0.96rem;
+    color: rgba(30, 64, 175, 0.52); /* Blueprint navy ink */
+    text-shadow: none;
+    pointer-events: none !important;
+}
+
+.background-net {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+        radial-gradient(circle at 0 0, var(--net-dot) 1.25px, transparent 1.35px),
+        linear-gradient(var(--net-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--net-line) 1px, transparent 1px);
+    background-size: var(--net-size) var(--net-size);
+    background-position: 0 0;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.accent-text {
+    background: var(--accent-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+section {
+    min-height: 100vh;
+    padding-top: var(--nav-height);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-header {
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.header-line {
+    width: 60px;
+    height: 4px;
+    background: var(--accent-color);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.5, 0, 0, 1), transform 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}

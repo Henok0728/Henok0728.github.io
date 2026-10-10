@@ -1,0 +1,264 @@
+/* ==========================================================================
+   Navigation Bar Styles (with Integrated Theme Toggle & Fluid Typography)
+   ========================================================================== */
+
+.glass-nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1000px, 94%);
+    height: 54px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50px;
+    z-index: 1000;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45), 0 0 20px rgba(255, 255, 255, 0.04);
+    transition: var(--transition-smooth);
+    padding: 0 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
+.nav-container {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: clamp(0.5rem, 0.3rem + 0.6vw, 1.5rem);
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.4rem, 0.2rem + 0.3vw, 0.75rem);
+    flex-shrink: 0;
+}
+
+#nav-profile-slot {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.logo {
+    font-size: clamp(1.02rem, 0.88rem + 0.35vw, 1.32rem);
+    font-weight: 800;
+    color: var(--text-primary);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+    white-space: nowrap;
+    transition: font-size 0.35s ease;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Fluid responsive navigation links that smoothly shrink on narrower screens */
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: clamp(0.1rem, 0.02rem + 0.25vw, 0.4rem);
+    transition: gap 0.35s ease;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: clamp(0.78rem, 0.68rem + 0.25vw, 0.9rem);
+    padding: clamp(0.36rem, 0.25rem + 0.2vw, 0.5rem) clamp(0.45rem, 0.25rem + 0.4vw, 0.85rem);
+    border-radius: 25px;
+    transition: font-size 0.35s ease, padding 0.35s ease, color 0.3s ease, background 0.3s ease;
+    position: relative;
+    white-space: nowrap;
+}
+
+.nav-links a:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.nav-links a.active {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Intermediate screen breakpoints for smooth, gradual font & padding shrinking */
+@media (max-width: 1120px) {
+    .nav-links a {
+        font-size: 0.84rem;
+        padding: 0.4rem 0.65rem;
+    }
+    .logo {
+        font-size: 1.18rem;
+    }
+}
+
+@media (max-width: 980px) {
+    .nav-links {
+        gap: 0.12rem;
+    }
+    .nav-links a {
+        font-size: 0.78rem;
+        padding: 0.34rem 0.5rem;
+    }
+    .logo {
+        font-size: 1.08rem;
+    }
+}
+
+@media (max-width: 860px) {
+    .nav-links a {
+        font-size: 0.73rem;
+        padding: 0.3rem 0.4rem;
+    }
+    .logo {
+        font-size: 1rem;
+    }
+}
+
+/* Right Actions Container: Theme Toggle + Hamburger */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    flex-shrink: 0;
+}
+
+/* Integrated Theme Toggle Button (Inside Nav Bar) */
+.theme-toggle-btn {
+    position: relative;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+                background-color 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease,
+                color 0.3s ease;
+}
+
+.theme-toggle-btn svg {
+    width: 17px;
+    height: 17px;
+}
+
+.theme-toggle-btn:hover {
+    transform: scale(1.08);
+    background: rgba(255, 255, 255, 0.14);
+    border-color: var(--text-primary);
+    box-shadow: 0 0 16px var(--accent-glow);
+}
+
+.theme-toggle-btn:active {
+    transform: scale(0.92);
+}
+
+.theme-toggle-btn .sun-icon {
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.theme-toggle-btn .moon-icon {
+    display: none;
+    transition: transform 0.4s ease;
+}
+
+/* Mobile Hamburger Toggle Button */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 38px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+.hamburger-bar {
+    width: 17px;
+    height: 2px;
+    background-color: var(--text-primary);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.mobile-menu-toggle.active .hamburger-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.mobile-menu-toggle.active .hamburger-bar:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active .hamburger-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Light Theme Nav Overrides */
+[data-theme="light"] .glass-nav {
+    background: var(--glass-bg);
+    border-color: rgba(15, 23, 42, 0.12);
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+[data-theme="light"] .nav-links a:hover {
+    background: rgba(15, 23, 42, 0.06);
+}
+
+[data-theme="light"] .nav-links a.active {
+    background: rgba(15, 23, 42, 0.1);
+    border-color: rgba(15, 23, 42, 0.15);
+    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.08);
+}
+
+[data-theme="light"] .theme-toggle-btn {
+    background: rgba(15, 23, 42, 0.06);
+    border-color: rgba(15, 23, 42, 0.14);
+}
+
+[data-theme="light"] .theme-toggle-btn:hover {
+    background: rgba(15, 23, 42, 0.12);
+    border-color: rgba(15, 23, 42, 0.25);
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.12);
+}
+
+[data-theme="light"] .theme-toggle-btn .sun-icon {
+    display: none;
+}
+
+[data-theme="light"] .theme-toggle-btn .moon-icon {
+    display: block;
+}
+
+[data-theme="light"] .mobile-menu-toggle {
+    background: rgba(15, 23, 42, 0.06);
+    border-color: rgba(15, 23, 42, 0.12);
+}

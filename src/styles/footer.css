@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Bebas+Neue&display=swap');
+
+footer {
+    padding: 3rem 0 0 0;
+    border-top: 1px solid var(--surface-border);
+    margin-top: 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem 2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.footer-content p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.footer-clock {
+    font-variant-numeric: tabular-nums;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--text-primary);
+}
+
+/* Space Bar Background Tip */
+.footer-space-tip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.35rem 0.8rem;
+    background: var(--surface-color);
+    border: 1px solid var(--surface-border);
+    border-radius: 9999px;
+    color: var(--text-secondary);
+    font-size: 0.82rem;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    user-select: none;
+    outline: none;
+    font-family: inherit;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.footer-space-tip:hover {
+    color: var(--text-primary);
+    border-color: rgba(255, 255, 255, 0.28);
+    background: hsl(var(--h) var(--s) calc(var(--surface-l) + 5%) / 0.9);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.footer-space-tip:focus-visible {
+    outline: 2px solid var(--text-primary);
+    outline-offset: 2px;
+}
+
+.footer-space-tip .tip-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    padding: 0.15rem 0.45rem;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.footer-space-tip .tip-text {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 400;
+}
+
+.footer-space-tip .space-kbd {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.1rem 0.5rem;
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    transition: all 0.12s ease;
+    line-height: 1.3;
+}
+
+.footer-space-tip:hover .space-kbd,
+.footer-space-tip.is-active .space-kbd {
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.22);
+}
+
+.footer-space-tip.is-active {
+    transform: translateY(1px);
+}
+
+.footer-space-tip.is-active .space-kbd {
+    transform: translateY(1px);
+    border-bottom-width: 1px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Light Theme Overrides for Tip */
+[data-theme="light"] .footer-space-tip {
+    background: var(--surface-color);
+    border-color: var(--surface-border);
+}
+
+[data-theme="light"] .footer-space-tip:hover {
+    border-color: rgba(15, 23, 42, 0.25);
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+[data-theme="light"] .footer-space-tip .tip-badge {
+    background: rgba(15, 23, 42, 0.08);
+    color: var(--text-primary);
+}
+
+[data-theme="light"] .footer-space-tip .space-kbd {
+    background: #ffffff;
+    border-color: rgba(15, 23, 42, 0.2);
+    border-bottom: 2px solid rgba(15, 23, 42, 0.4);
+    color: var(--text-primary);
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.1);
+}
+
+[data-theme="light"] .footer-space-tip:hover .space-kbd,
+[data-theme="light"] .footer-space-tip.is-active .space-kbd {
+    background: #f1f5f9;
+    border-color: rgba(15, 23, 42, 0.4);
+}
+
+[data-theme="light"] .footer-space-tip.is-active .space-kbd {
+    box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.15);
+}
+
+/* Integrated Graphic Background Layout */
+.nike-slogan-layout {
+    position: relative;
+    width: 100%;
+    padding: 2.8rem 1rem 2.2rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    pointer-events: none;
+    user-select: none;
+}
+
+.slogan-bg-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 120px;
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
+    filter: blur(35px);
+    pointer-events: none;
+}
+
+.slogan-text {
+    font-family: 'Oswald', 'Bebas Neue', sans-serif;
+    font-size: clamp(2.8rem, 9.8vw, 9.2rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    line-height: 0.85;
+    font-style: italic;
+    white-space: nowrap;
+    text-align: center;
+    display: inline-block;
+
+    /* Increased Vertical Height Stretch */
+    transform: scaleY(1.25) skewX(-2deg);
+
+    /* Subtle background-blended text color (readable yet integrated) */
+    opacity: 0.32;
+    background: linear-gradient(180deg, var(--text-primary) 0%, rgba(255, 255, 255, 0.12) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Soft Depth Shadow */
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+
+    transition: opacity 0.4s ease;
+}
+
+[data-theme="light"] .slogan-bg-glow {
+    background: radial-gradient(ellipse at center, rgba(15, 23, 42, 0.06) 0%, rgba(15, 23, 42, 0) 70%);
+}
+
+[data-theme="light"] .slogan-text {
+    opacity: 0.38;
+    background: linear-gradient(180deg, #0f172a 0%, rgba(15, 23, 42, 0.18) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 8px rgba(15, 23, 42, 0.1));
+}
+
+@media (max-width: 768px) {
+    .nike-slogan-layout {
+        padding: 1.8rem 0.5rem 1.4rem 0.5rem;
+    }
+    .slogan-text {
+        font-size: clamp(1.6rem, 8.5vw, 4.8rem);
+        transform: scaleY(1.2) skewX(-2deg);
+    }
+}

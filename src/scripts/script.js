@@ -1,0 +1,32 @@
+import { restoreTheme, initTheme } from './modules/theme.js';
+import { initPreloader } from './modules/preloader.js';
+import { initScrollObserver } from './modules/animations.js';
+import { initNavigation } from './modules/navigation.js';
+import { initTypewriter } from './modules/typewriter.js';
+import { initContactForm } from './modules/contact-form.js';
+import { initPhysicsBackground } from './modules/physics-bg.js';
+import { initLightBackground } from './modules/light-bg.js';
+import { initAnalytics } from './modules/analytics.js';
+
+// Immediately restore theme preference from localStorage to avoid theme flash
+restoreTheme();
+
+const init = () => {
+    // Initialize dark physics equations background & light electronic/transistor circuits background
+    initPhysicsBackground();
+    initLightBackground();
+    initAnalytics();
+
+    initTheme();
+    initNavigation();
+    initPreloader();
+    initScrollObserver();
+    initTypewriter();
+    initContactForm();
+};
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+} else {
+    init();
+}
