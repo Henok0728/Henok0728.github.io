@@ -65,7 +65,7 @@ export default function Hero() {
             EngineerCoder |<span className="accent-text">{roleText}</span>
             {showDot && '.'}
           </h2>
-          <p className="bio">I engineer,build and ship systems that solve real world problems.<br/>                          
+          <p className="bio">I engineer, innovate and build systems that matters.<br/>                          
           </p>
           <div className="hero-actions">
             <a href="#projects" className="btn primary-btn">
