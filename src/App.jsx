@@ -13,7 +13,6 @@ import { initPhysicsBackground } from './scripts/modules/physics-bg';
 import { initLightBackground } from './scripts/modules/light-bg';
 import { initScrollObserver } from './scripts/modules/animations';
 import { morphProfile } from './scripts/modules/profile-morph';
-
 export default function App() {
   useEffect(() => {
 
