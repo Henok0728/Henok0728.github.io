@@ -33,6 +33,13 @@ const certificates = [
     year: '2026',
     link: 'https://drive.google.com/file/d/1S-_HajNprNnaTJKbJUL5Im4wDfTovPA4/view?usp=sharing',
     delay: '250ms',
+  },
+  {
+    title: 'Stark hackathon Certificate', 
+    issuer: 'Stark Hackathon',
+    year: '2026',
+    link: 'https://drive.google.com/file/d/1_pF5EYjStgv2kicgw1NQeSJDJgrgNVND/view?usp=sharing',
+    delay:'300ms'
   }
 ];
 
